@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo', sans-serif;
+    caret-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --gradient: linear-gradient(45deg,
+    #111111,
+    #222222,
+    #111111);
+
+    --gradient-green: linear-gradient(45deg,
+    #111111,
+    #99ec2ce1,
+    #111111);
+
+    --gradient-green-reversed: linear-gradient(45deg,
+    #99ec2ce1,
+    #111111,
+    #99ec2ce1);
+
+    --gradient-dark-green: linear-gradient(45deg,
+        /* #222222, */ #228010e1,
+    #111111);
+
+}
+
+/*Title*/
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: var(--gradient);
+    background-position: center;
+    background-size: 250%;
+    position: relative;
+    animation: bg-animation 3s ease-in-out infinite alternate;
+    background-attachment: fixed;
+}
+
+/*Navigation links*/
+nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1% 0;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #99ec2ce1;
+}
+
+@keyframes under {
+    0% {
+        text-decoration-color: var(--gradient);
+    }
+
+    50% {
+        text-decoration-color: #99ec2ce1;
+    }
+
+    100% {
+        text-decoration-color: var(--gradient);
+    }
+}
+
+/*eSports Tracker*/
+nav a {
+    cursor: default;
+    font-size: 70px;
+    font-style: italic;
+    text-decoration-color: #99ec2ce1;
+    color: #fff;
+    animation: under 2s ease-in-out infinite;
+    transition: 500ms;
+}
+
+nav a:hover {
+    cursor: default;
+    text-decoration-color: rgb(255, 255, 255);
+    transition: 500ms;
+}
+
+/*Navigation's*/
+.nav-links {
+    flex: 1;
+    margin: 1em;
+    text-align: right;
+    font-style: italic;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 35px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0;
+    height: 6px;
+    background: #99ec2ce1;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+/*Content*/
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/*Header*/
+.text-box>h1 {
+    font-size: 60px;
+    transition: 1s;
+}
+
+/*Text*/
+.text-box {
+    margin-top: 8%;
+}
+
+.text-box>p {
+    margin: 10px 0 40px;
+    font-size: 30px;
+    transition: 1s;
+    color: #fff;
+}
+
+.username-text {
+    font-size: 30px;
+}
+
+/*FORM*/
+.ct-form {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    width: 600px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.ct-form h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.ct-form h3 {
+    margin: 0 0 10px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.ct-form .input-box {
+    position: relative;
+}
+
+.ct-form .input-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #99ec2ce1;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    caret-color: #99ec2ce1;
+}
+
+.ct-form .input-box textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #99ec2ce1;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    caret-color: #99ec2ce1;
+    resize: vertical;
+}
+.ct-form .input-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.ct-form .input-box input:focus ~ label,
+.ct-form .input-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #99ec2ce1;
+    font-size: 12px;
+}
+
+button {
+    background: transparent;
+    border: transparent;
+}
+
+.ct-form form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 130px;
+    color: #99ec2ce1;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+}
+
+.ct-form button:hover {
+    background: #99ec2ce1;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #99ec2ce1,
+    0 0 10px #99ec2ce1,
+    0 0 20px #99ec2ce1,
+    0 0 50px #99ec2ce1;
+    cursor: pointer;
+}
+
+.ct-form button span {
+    position: absolute;
+    display: block;
+}
+
+.ct-form button span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #99ec2ce1);
+    animation: btn-anim1 1s linear infinite;
+}
+
+.selector {
+    background: transparent;
+    color: #99ec2ce1;
+    font-size: 18px;
+    font-weight: bold;
+    border: 0 solid transparent;
+    border-bottom: 2px solid white;
+    width: 100%;
+}
+
+.selector:focus {
+    background: #111111;
+    color: #99ec2ce1;
+    font-size: 18px;
+    font-weight: bold;
+    border: 0 solid transparent;
+    border-bottom: 2px solid #99ec2ce1;
+    width: 100%;
+}
+
+#player-form {
+    display: block;
+}
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+    50%,100% {
+        left: 100%;
+    }
+}
+
+.ct-form button span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #99ec2ce1);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,100% {
+        top: 100%;
+    }
+}
+
+.ct-form button span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #99ec2ce1);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,100% {
+        right: 100%;
+    }
+}
+
+.ct-form button span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #99ec2ce1);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,100% {
+        bottom: 100%;
+    }
+}
+
+.contact-sec {
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-image: var(--gradient);
+    background-position: center;
+    background-size: 250%;
+    position: relative;
+    animation: bg-animation 3s ease-in-out infinite alternate;
+    background-attachment: fixed;
+}
+
+.map-sec .map {
+    padding: 9px;
+    position: relative;
+    text-align: center;
+}
+
+.map-sec {
+    font-size: 40px;
+    padding: 5px 1em 1em 1em;
+}
+
+.map-sec p {
+    font-size: 26px;
+}
+
+
+
+/*FOOTER*/
+footer {
+    background: var(--gradient-green);
+    background-size: 150%;
+    animation: bg-animation 2s infinite alternate;
+    font-size: 20px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.row .author {
+    text-align: left;
+    padding-left: 1em;
+}

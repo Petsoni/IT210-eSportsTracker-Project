@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo', sans-serif;
+    caret-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --gradient: linear-gradient(45deg,
+    #111111,
+    #222222,
+    #111111);
+
+    --gradient-green: linear-gradient(45deg,
+    #111111,
+    #99ec2ce1,
+    #111111);
+
+    --gradient-green-reversed: linear-gradient(45deg,
+    #99ec2ce1,
+    #111111,
+    #99ec2ce1);
+
+    --gradient-dark-green: linear-gradient(45deg,
+        /* #222222, */ #228010e1,
+    #111111);
+
+}
+
+/*Title*/
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: var(--gradient);
+    background-position: center;
+    background-size: 250%;
+    position: relative;
+    animation: bg-animation 3s ease-in-out infinite alternate;
+    background-attachment: fixed;
+}
+
+/*Navigation links*/
+nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1% 0;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px #99ec2ce1;
+}
+
+@keyframes under {
+    0% {
+        text-decoration-color: var(--gradient);
+    }
+
+    50% {
+        text-decoration-color: #99ec2ce1;
+    }
+
+    100% {
+        text-decoration-color: var(--gradient);
+    }
+}
+
+/*eSports Tracker*/
+h1 {
+    font-size: 3.5rem;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+nav a {
+    cursor: default;
+    font-size: 70px;
+    font-style: italic;
+    text-decoration-color: #99ec2ce1;
+    color: #fff;
+    animation: under 2s ease-in-out infinite;
+    transition: 500ms;
+}
+
+nav a:hover {
+    cursor: default;
+    text-decoration-color: rgb(255, 255, 255);
+    transition: 500ms;
+}
+
+/*Navigation's*/
+.nav-links {
+    flex: 1;
+    margin: 1em;
+    text-align: right;
+    font-style: italic;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 35px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 6px;
+    background: #99ec2ce1;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+/*Content*/
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/*Header*/
+.text-box>h1 {
+    font-size: 60px;
+    transition: 1s;
+}
+
+/*Text*/
+.text-box {
+    margin-top: 10%;
+}
+
+.text-box>p {
+    margin: 10px 0 40px;
+    font-size: 30px;
+    transition: 1s;
+    color: #fff;
+}
+
+.username-text {
+    font-size: 30px;
+}
+
+/*FOOTER*/
+footer {
+    background: var(--gradient-green);
+    background-size: 150%;
+    animation: bg-animation 2s infinite alternate;
+    font-size: 20px;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.row .author {
+    text-align: left;
+    padding-left: 1em;
+}
